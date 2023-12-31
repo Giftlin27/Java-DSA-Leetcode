@@ -239,4 +239,30 @@ class Solution {
         }
         return max;
     }
-}                                
+} 
+
+13. [Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        for(var row: image)
+        {
+            int i=0, j=row.length-1;
+            for(; i<j; i++, j--)
+            {
+                if(row[i]==row[j])
+                {
+                    row[i]^=1;
+                    row[j]^=1;
+                }
+            }
+            if(i==j)
+            {
+                row[i]^=1;
+            }
+        }
+        return image;
+        
+    }
+}
+
+14. [Cells with Odd Values in a Matrix](https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/)
