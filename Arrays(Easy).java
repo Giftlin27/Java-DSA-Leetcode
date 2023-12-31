@@ -179,3 +179,42 @@ class Solution {
         return false;
     }
 }
+
+11. [Count Items Matching a Rule](https://leetcode.com/problems/count-items-matching-a-rule/)
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int index=0;
+        int count=0;
+        if(ruleKey.equals("color"))
+        {
+            index=1;
+        }
+        else if(ruleKey.equals("name"))
+        {
+            index=2;
+        }
+        //default else index would be zero
+        for(List item: items)
+        {
+            if(item.get(index).equals(ruleValue))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+12. [Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int max=0;
+        int cal=0;
+        for(int i=0; i<gain.length; i++)
+        {
+            cal += gain[i];
+            max = Math.max(max, cal);
+        }
+        return max;
+    }
+}                                
