@@ -266,3 +266,25 @@ class Solution {
 }
 
 14. [Cells with Odd Values in a Matrix](https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/)
+                                        class Solution {
+    public int oddCells(int n, int m, int[][] indices) {
+        int[] row = new int[n];
+        int[] col = new int[m];
+        int res = 0;
+
+        for (int[] pair : indices) {
+            row[pair[0]]++;
+            col[pair[1]]++;
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (((row[i] + col[j]) & 1) == 1) {
+                    res++;
+                }
+            }
+        }
+
+        return res;
+    }
+}
