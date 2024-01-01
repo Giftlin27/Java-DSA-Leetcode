@@ -288,3 +288,29 @@ class Solution {
         return res;
     }
 }
+
+15. [Matrix Diagonal Sum](https://leetcode.com/problems/matrix-diagonal-sum/)
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int sum=0;
+        for(int i=0; i<mat.length; i++)
+        {
+            for(int j=0; j<mat.length; j++)
+            {
+                if(i==j)
+                {
+                    sum+=mat[i][j];
+                }
+                else if(i==(mat.length-j-1))
+                {
+                    sum+=mat[i][j];
+                }
+            }
+        }
+        return sum;
+        
+    }
+}
+
+16. [Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/)
+
